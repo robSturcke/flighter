@@ -1,0 +1,13 @@
+nav {
+  font-family: 'Space Grotesk', sans-serif;
+  .navbar_brand {
+    width: 150px;
+    .color0 {
+      fill: $flighter_red;
+    }
+
+    .color1 {
+      fill: rgb(30, 30, 30);
+    }
+  }
+}
