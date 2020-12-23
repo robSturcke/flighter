@@ -1,12 +1,13 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Airlines from '../components/airlines';
 
-const Home = () => (
-  <>
-    <Layout>
+const Home = () => {
+  return (
+    <>
       HOME <div>STUFFF</div>PAGE
-    </Layout>
-  </>
-);
+      <Airlines />
+    </>
+  );
+};
 
 export default Home;

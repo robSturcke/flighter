@@ -1,27 +1,27 @@
 airlines = Airline.create([
                             {
                               name: 'United Airlines',
-                              image_url: 'https://open-flights.s3.amazonaws.com/United-Airlines.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/United-Airlines_qhc0ez.png'
                             },
                             {
                               name: 'Southwest',
-                              image_url: 'https://open-flights.s3.amazonaws.com/Southwest-Airlines.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/Southwest-Airlines_xlzkbg.png'
                             },
                             {
                               name: 'Delta',
-                              image_url: 'https://open-flights.s3.amazonaws.com/Delta.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/Delta_znc5ph.png'
                             },
                             {
                               name: 'Alaska Airlines',
-                              image_url: 'https://open-flights.s3.amazonaws.com/Alaska-Airlines.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/Alaska-Airlines_qvg2jq.png'
                             },
                             {
                               name: 'JetBlue',
-                              image_url: 'https://open-flights.s3.amazonaws.com/JetBlue.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/JetBlue_sjdcu9.png'
                             },
                             {
                               name: 'American Airlines',
-                              image_url: 'https://open-flights.s3.amazonaws.com/American-Airlines.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/American-Airlines_wq45og.png'
                             }
                           ])
 
