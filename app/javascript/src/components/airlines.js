@@ -16,17 +16,19 @@ const Airlines = () => {
 
   const allAirlines = airlines.map((airline, index) => {
     return (
-      <Airline
-        key={index}
-        name={airline.attributes.name}
-        image_url={airline.attributes.image_url}
-        slug={airline.attributes.slug}
-        average_score={airline.attributes.average_score}
-      />
+      <div className="col-4" key={index}>
+        <Airline
+          key={index}
+          name={airline.attributes.name}
+          image_url={airline.attributes.image_url}
+          slug={airline.attributes.slug}
+          average_score={airline.attributes.average_score}
+        />
+      </div>
     );
   });
 
-  return <div>{allAirlines}</div>;
+  return <>{allAirlines}</>;
 };
 
 export default Airlines;

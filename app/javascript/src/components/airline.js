@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Airline = (props) => {
   return (
     <div>
-      <img src={props.image_url} alt={props.name} width="50" />
+      <img src={props.image_url} alt={props.name} width="150" />
       <div>
         <p>{props.name}</p>
       </div>
