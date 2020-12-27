@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Review from '../components/review';
-import ReviewHeader from '../components/review_header';
+import Review from './review';
+import Header from './review_header';
 
-const AirlineReviews = (props) => {
+const Airline = (props) => {
   const [airline, setAirline] = useState({});
   const [reviews, setReviews] = useState([]);
   const [review, setReview] = useState({
@@ -28,7 +28,7 @@ const AirlineReviews = (props) => {
   }, []);
 
   const handleChange = (e) => {
-    setReview(Ovject.assign({}, review, { [e.target.name]: e.target.value }));
+    setReview(Object.assign({}, review, { [e.target.name]: e.target.value }));
   };
 
   const setRating = (score, e) => {
@@ -56,9 +56,20 @@ const AirlineReviews = (props) => {
 
   return (
     <div className="container-fluid">
-      <div className="row">{userReviews ? userReviews : 'No Reviews Yet'}</div>
+      {loaded && (
+        <>
+          <Header
+            attributes={airline.data.attributes}
+            reviews={reviews}
+            average={average}
+          />
+          <div className="row">
+            {userReviews ? userReviews : 'No Reviews Yet'}
+          </div>
+        </>
+      )}
     </div>
   );
 };
 
-export default AirlineReviews;
+export default Airline;
