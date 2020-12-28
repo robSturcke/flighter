@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Airline = (props) => {
   return (
-    <div>
-      <img src={props.image_url} alt={props.name} width="150" />
+    <div className="text-center">
+      <img className="airline_logo" src={props.image_url} alt={props.name} />
       <div>
-        <p>{props.name}</p>
+        <h2>{props.name}</h2>
       </div>
       <div>
         <p>{props.average_score}</p>

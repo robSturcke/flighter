@@ -16,7 +16,7 @@ const Airlines = () => {
 
   const allAirlines = airlines.map((airline, index) => {
     return (
-      <div className="col-4" key={index}>
+      <div className="col-md-4 col-sm-6" key={index}>
         <Airline
           key={index}
           name={airline.attributes.name}
