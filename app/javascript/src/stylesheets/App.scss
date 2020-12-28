@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 @import './_variables.scss';
+@import './airlines.scss';
 @import './navigation.scss';
 // font-family: 'Open Sans', sans-serif;
 // font-family: 'Space Grotesk', sans-serif;
@@ -15,8 +16,27 @@
   min-height: 100vh;
   flex-direction: column;
   letter-spacing: 0.03rem;
+  // transition: all 0.25s ease-out;
 
   main {
     flex-grow: 1;
+    background-color: $white;
+
+    a {
+      color: lighten($color: $flighter, $amount: 15%);
+      font-weight: bold;
+      &:hover {
+        text-decoration: none;
+        color: $flighter;
+      }
+    }
+  }
+
+  footer {
+    background: $off_white;
+
+    .footer_txt {
+      margin: 1rem auto;
+    }
   }
 }

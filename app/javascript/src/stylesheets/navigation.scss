@@ -1,13 +1,29 @@
-nav {
-  font-family: 'Space Grotesk', sans-serif;
-  .navbar_brand {
-    width: 150px;
-    .color0 {
-      fill: $flighter_red;
-    }
+.nav_wrap {
+  background: $off_white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 88px;
+  z-index: 1030;
+  width: 100%;
+  border-bottom: 1px solid rgb(235, 235, 235);
+  transition: background 0.25s ease-out;
+  nav {
+    margin: auto;
+    max-width: 1440px;
+    background-color: $off_white;
+    font-family: 'Space Grotesk', sans-serif;
 
-    .color1 {
-      fill: $flighter_blk;
+    .navbar_brand {
+      width: 150px;
+      .color0 {
+        fill: $flighter;
+      }
+
+      .color1 {
+        fill: $flighter_blk;
+      }
     }
   }
 }
