@@ -4,12 +4,14 @@ import Airline from './airline';
 
 const Airlines = () => {
   const [airlines, setAirlines] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     axios
       .get('/api/v1/airlines.json')
       .then((resp) => {
         setAirlines(resp.data.data);
+        setLoaded(true);
       })
       .catch((data) => console.log('error', data));
   }, [airlines.length]);
@@ -28,7 +30,7 @@ const Airlines = () => {
     );
   });
 
-  return <>{allAirlines}</>;
+  return <>{loaded && allAirlines}</>;
 };
 
 export default Airlines;

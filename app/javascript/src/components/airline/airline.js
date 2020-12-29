@@ -63,9 +63,13 @@ const Airline = (props) => {
             reviews={reviews}
             average={average}
           />
-          <div className="row">
-            {userReviews ? userReviews : 'No Reviews Yet'}
-          </div>
+          <section>
+            <div className="row">
+              {userReviews
+                ? userReviews
+                : 'No Reviews Yet! Leave a review next time you fly!'}
+            </div>
+          </section>
         </>
       )}
     </div>

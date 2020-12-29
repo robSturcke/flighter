@@ -5,23 +5,23 @@ airlines = Airline.create([
                             },
                             {
                               name: 'Southwest',
-                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/Southwest-Airlines_xlzkbg.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1609198168/flighter/southewest_g1wuwf.png'
                             },
                             {
                               name: 'Delta',
-                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/Delta_znc5ph.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1609198168/flighter/delta_oysvmp.png'
                             },
                             {
                               name: 'Alaska Airlines',
-                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/Alaska-Airlines_qvg2jq.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1609198168/flighter/AlaskaAirlines_tvlrsq.png'
                             },
                             {
                               name: 'JetBlue',
-                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/JetBlue_sjdcu9.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1609198168/flighter/JetBlue_uqobzc.png'
                             },
                             {
                               name: 'American Airlines',
-                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1608695200/flighter/American-Airlines_wq45og.png'
+                              image_url: 'https://res.cloudinary.com/dip34kv9y/image/upload/v1609198168/flighter/American-Airlines_ee8cmh.png'
                             }
                           ])
 

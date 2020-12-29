@@ -13,7 +13,7 @@ const Navigation = () => (
       </div>
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse id="navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="ml-auto">
           <li className="nav-item">
             <Link to="/" className="nav-link">
               Home

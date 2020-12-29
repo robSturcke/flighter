@@ -6,9 +6,13 @@ const Header = ({ attributes, reviews, average, ...props }) => {
   return (
     <>
       <h1>
-        <img src={image_url} height="75" width="75" alt={name} /> {name}
+        <img src={image_url} width="175" alt={name} /> {name}
       </h1>
-      <div>{reviews ? reviews.length : 0} customer reviews</div>
+      {reviews.length == 0 ? (
+        'No Customer Reveiws Yet'
+      ) : (
+        <div>{reviews ? reviews.length : 0} customer reviews</div>
+      )}
       <div>{average.toFixed(1)} out of 5 stars</div>
     </>
   );

@@ -5,16 +5,20 @@ const Review = ({ attributes, ...props }) => {
 
   return (
     <div className="col-md-12">
-      <div className="card">
-        <div className="card-title">
-          <h1>
-            {title} <span className="float-right">{score}</span>
-          </h1>
+      <article>
+        <div className="card">
+          <div className="card-title">
+            <header>
+              <h1>
+                {title} <span className="float-right">{score}</span>
+              </h1>
+            </header>
+          </div>
+          <div className="card-body">
+            <p>{description}</p>
+          </div>
         </div>
-        <div className="card-body">
-          <p>{description}</p>
-        </div>
-      </div>
+      </article>
     </div>
   );
 };
