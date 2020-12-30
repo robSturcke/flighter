@@ -1,0 +1,21 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.star_wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.stars {
+  color: rgb(255, 214, 10);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.star_wrap::before,
+.stars::before {
+  font-family: 'FontAwesome';
+  content: '\f005 \0020 \f005 \0020 \f005 \0020 \f005 \0020 \f005';
+}
