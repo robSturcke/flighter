@@ -2,17 +2,6 @@ import React from 'react';
 
 const LowerBanner = (props) => (
   <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 800 400">
-    {/* <style type="text/css">
-	.st0{fill:#F2F2F2;}
-	.st1{fill:#3F3D56;}
-	.st2{opacity:0.8;fill:none;stroke:#5856D6;stroke-width:2;stroke-miterlimit:10;enable-background:new    ;}
-	.st3{fill:#6C63FF;}
-	.st4{fill:#A0616A;}
-	.st5{fill:#CCCCCC;}
-	.st6{fill:#2F2E41;}
-	.st7{fill:#FFD60A;}
-	.st8{fill:#353535;}
-</style> */}
     <g>
       <path
         className="st0"

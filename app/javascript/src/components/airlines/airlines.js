@@ -21,10 +21,10 @@ const Airlines = () => {
       <div className="col-md-4 col-sm-6" key={index}>
         <Airline
           key={index}
+          average_score={airline.attributes.avg_score}
           name={airline.attributes.name}
           image_url={airline.attributes.image_url}
           slug={airline.attributes.slug}
-          average_score={airline.attributes.average_score}
         />
       </div>
     );

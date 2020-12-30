@@ -2,16 +2,6 @@ import React from 'react';
 
 const Banner = (props) => (
   <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 800 400">
-    {/* <style type="text/css">
-	.st0{enable-background:new    ;}
-	.st1{fill:#353535;}
-	.st2{fill:#5856D6;}
-	.st3{fill:#2B2B2B;}
-	.st4{fill:#3F3D56;}
-	.st5{fill:#5E5CE6;}
-	.st6{fill:#F2F2F2;}
-	.st7{opacity:3.000000e-02;enable-background:new    ;}
-</style> */}
     <g className="st0">
       <path
         className="st1"

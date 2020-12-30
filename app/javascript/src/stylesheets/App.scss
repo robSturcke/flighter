@@ -10,7 +10,7 @@
 
 .spacer {
   width: 100%;
-  height: 100px;
+  height: 95px;
 }
 
 .content {
@@ -23,14 +23,14 @@
   main {
     flex-grow: 1;
     background-color: $white;
+  }
 
-    a {
-      color: lighten($color: $flighter, $amount: 15%);
-      font-weight: bold;
-      &:hover {
-        text-decoration: none;
-        color: $flighter;
-      }
+  a {
+    color: $flighter;
+    font-weight: bold;
+    &:hover {
+      text-decoration: none;
+      color: darken($color: $flighter, $amount: 15%);
     }
   }
 
