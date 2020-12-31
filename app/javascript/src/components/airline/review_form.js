@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 const ReviewForm = (props) => {
   const ratingOverall = [5, 4, 3, 2, 1].map((score, index) => {
     return (
-      <>
+      <span key={index}>
         <input
           type="radio"
           value={score}
@@ -13,7 +13,7 @@ const ReviewForm = (props) => {
           id={`rating-${score}`}
         />
         <label onClick={props.setRating.bind(this, score)} />
-      </>
+      </span>
     );
   });
 
@@ -27,6 +27,7 @@ const ReviewForm = (props) => {
             name="title"
             placeholder="Your review title"
             value={props.review.title}
+            onChange={props.handleChange}
           />
         </Form.Group>
         <Form.Group controlId="description">
@@ -36,6 +37,7 @@ const ReviewForm = (props) => {
             name="description"
             placeholder="Your review's description"
             value={props.review.description}
+            onChange={props.handleChange}
           />
         </Form.Group>
         <Form.Group controlId="formBasicCheckbox">{ratingOverall}</Form.Group>
