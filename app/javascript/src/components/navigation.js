@@ -16,12 +16,12 @@ const Navigation = () => (
         <Nav className="ml-auto">
           <li className="nav-item">
             <Link to="/" className="nav-link">
-              Home
+              AIRLINES
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/about" className="nav-link">
-              About
+              ABOUT
             </Link>
           </li>
         </Nav>
