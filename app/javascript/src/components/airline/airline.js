@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Accordion, Button } from 'react-bootstrap';
 import axios from 'axios';
 import Review from './review';
 import Header from './review_header';
@@ -92,18 +93,34 @@ const Airline = (props) => {
             average={average}
           />
           <section>
-            <div className="fixed_dropdown">
-              <ReviewForm
-                name={airline.data.attributes.name}
-                review={review}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                setRating={setRating}
-                error={error}
-              />
-            </div>
-            <div className="row">
-              <div className="col-sm-12">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-md-12">
+                  <Accordion>
+                    <div className="my-3">
+                      <Accordion.Toggle
+                        as={Button}
+                        variant="link"
+                        eventKey="0"
+                        size="lg"
+                      >
+                        Share a Review!
+                      </Accordion.Toggle>
+                    </div>
+                    <Accordion.Collapse eventKey="0">
+                      <ReviewForm
+                        name={airline.data.attributes.name}
+                        review={review}
+                        handleChange={handleChange}
+                        handleSubmit={handleSubmit}
+                        setRating={setRating}
+                        error={error}
+                      />
+                    </Accordion.Collapse>
+                  </Accordion>
+                </div>
+              </div>
+              <div className="row">
                 {userReviews
                   ? userReviews
                   : 'No Reviews Yet! Leave a review next time you fly!'}

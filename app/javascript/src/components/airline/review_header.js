@@ -1,20 +1,27 @@
 import React from 'react';
+import Rating from '../rating';
 
 const Header = ({ attributes, reviews, average, ...props }) => {
   const { image_url, name } = attributes;
 
   return (
-    <>
-      <h1>
-        <img src={image_url} width="175" alt={name} /> {name}
-      </h1>
-      {reviews.length == 0 ? (
-        'No Customer Reveiws Yet'
-      ) : (
-        <div>{reviews ? reviews.length : 0} customer reviews</div>
-      )}
-      <div>{average.toFixed(1)} out of 5 stars</div>
-    </>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-12">
+          <h1>
+            <img className="airline_logo" src={image_url} alt={name} /> {name}
+          </h1>
+          {reviews.length == 0 ? (
+            'No Customer Reveiws Yet'
+          ) : (
+            <div>{reviews ? reviews.length : 0} customer reviews</div>
+          )}
+          <div>
+            <Rating average_score={average.toFixed(1)} /> overall
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -1,44 +1,36 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const ReviewForm = (props, { value }) => {
-  const [rating, setRating] = useState(parseInt(value) || 0);
-  const [selection, setSelection] = useState(0);
+const Star = ({ selected = false, onClick = (f) => f }) => (
+  <div
+    className={selected ? 'review-star selected' : 'review-star'}
+    onClick={onClick}
+  />
+);
 
-  const ratings = [5, 4, 3, 2, 1];
-
-  const handleHover = (event) => {
-    let val = 0;
-    if (event && event.target && event.target.getAttribute('star-id')) {
-      val = event.target.getAttribute('star-id');
-    }
-    setSelection(val);
-  };
-
-  const ratingOverall = ratings.map((score, index) => {
-    return (
-      <span key={index}>
-        <span star-id={score} className="rating">
-          <input
-            type="radio"
-            value={score}
-            checked={props.review.score == score}
-            onChange={() => console.log('onChange')}
-            onClick={(e) =>
-              setRating(e.target.getAttribute('star-id') || rating)
-            }
-            onMouseOver={handleHover}
-            name="rating"
-            id={`rating-${score}`}
-          />
-          <label onClick={props.setRating.bind(this, score)}></label>
-        </span>
-      </span>
-    );
-  });
+const StarRating = ({ totalStars }) => {
+  const [score, selectStar] = useState(0);
 
   return (
-    <>
+    <div className="review_rating">
+      {[...Array(totalStars)].map((n, i) => (
+        <Star
+          key={i}
+          value={score}
+          selected={i < score}
+          onClick={() => selectStar(i + 1)}
+        />
+      ))}
+      <p className="text-muted pt-2">
+        {score} of {totalStars} stars
+      </p>
+    </div>
+  );
+};
+
+const ReviewForm = (props, { score }) => {
+  return (
+    <div className="review_form">
       <Form>
         <Form.Group controlId="title">
           <Form.Label>Review Title</Form.Label>
@@ -54,19 +46,30 @@ const ReviewForm = (props, { value }) => {
           <Form.Label>Review description</Form.Label>
           <Form.Control
             type="text"
+            as="textarea"
+            rows="3"
             name="description"
             placeholder="Your review's description"
             value={props.review.description}
             onChange={props.handleChange}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicCheckbox">{ratingOverall}</Form.Group>
-        <Button variant="primary" type="submit">
-          Submit Review
-        </Button>
+        <Form.Group controlId="score">
+          <Form.Label>Your Rating</Form.Label>
+          <StarRating
+            totalStars={5}
+            onClick={props.setRating.bind(this, score)}
+            value={score}
+          />
+        </Form.Group>
+        <div className="float-right mb-5">
+          <Button variant="primary" type="submit">
+            Submit Review
+          </Button>
+        </div>
         {props.error && <p>{props.error}</p>}
       </Form>
-    </>
+    </div>
   );
 };
 

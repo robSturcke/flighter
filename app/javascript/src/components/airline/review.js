@@ -1,20 +1,24 @@
 import React from 'react';
+import Rating from '../rating';
 
-const Review = ({ attributes, ...props }) => {
+const Review = ({ attributes }) => {
   const { title, description, score } = attributes;
 
   return (
-    <div className="col-md-12">
+    <div className="col-md-12 my-3">
       <article>
-        <div className="card">
-          <div className="card-title">
+        <div className="review">
+          <div className="review_title">
             <header>
               <h1>
-                {title} <span className="float-right">{score}</span>
+                {title}
+                <span className="float-right">
+                  <Rating average_score={score} />
+                </span>
               </h1>
             </header>
           </div>
-          <div className="card-body">
+          <div className="review_body">
             <p>{description}</p>
           </div>
         </div>

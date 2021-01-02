@@ -5,8 +5,8 @@
 @import './banners.scss';
 @import './navigation.scss';
 @import './rating.scss';
+@import './reviews.scss';
 // font-family: 'Open Sans', sans-serif;
-// font-family: 'Space Grotesk', sans-serif;
 
 .spacer {
   width: 100%;
@@ -18,7 +18,7 @@
   min-height: 100vh;
   flex-direction: column;
   letter-spacing: 0.03rem;
-  // transition: all 0.25s ease-out;
+  transition: margin 0.25s ease-out;
 
   main {
     flex-grow: 1;

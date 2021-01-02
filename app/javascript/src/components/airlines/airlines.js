@@ -18,7 +18,7 @@ const Airlines = () => {
 
   const allAirlines = airlines.map((airline, index) => {
     return (
-      <div className="col-md-4 col-sm-6" key={index}>
+      <div className="col-md-4 col-sm-6" key={index} id={'airlines'}>
         <Airline
           key={index}
           average_score={airline.attributes.avg_score}
