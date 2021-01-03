@@ -1,33 +1,5 @@
 .hero_banner {
   .st0 {
-    enable-background: new;
-  }
-  .st1 {
-    fill: #353535;
-  }
-  .st2 {
-    fill: #5856d6;
-  }
-  .st3 {
-    fill: #2b2b2b;
-  }
-  .st4 {
-    fill: #3f3d56;
-  }
-  .st5 {
-    fill: #5e5ce6;
-  }
-  .st6 {
-    fill: #f2f2f2;
-  }
-  .st7 {
-    opacity: 3e-2;
-    enable-background: new;
-  }
-}
-
-.lower_banner {
-  .st0 {
     fill: #f2f2f2;
   }
   .st1 {
@@ -57,6 +29,50 @@
     fill: #ffd60a;
   }
   .st8 {
-    fill: #353535;
+    fill: #5e5ce6;
+  }
+}
+
+.lower_banner {
+  .st0 {
+    opacity: 0.1;
+    fill: #6c63ff;
+    enable-background: new;
+  }
+  .st1 {
+    fill: url(#SVGID_1_);
+  }
+  .st2 {
+    fill: #65617d;
+  }
+  .st3 {
+    opacity: 0.1;
+    enable-background: new;
+  }
+  .st4 {
+    fill: #fbbebe;
+  }
+  .st5 {
+    fill: #3a3768;
+  }
+  .st6 {
+    fill: #6c63ff;
+  }
+  .st7 {
+    fill: #e6e8ec;
+  }
+  .st8 {
+    fill: #3f3d56;
+  }
+  .st9 {
+    fill: none;
+    stroke: #00ffff;
+    stroke-miterlimit: 10;
+  }
+  .st10 {
+    fill: #5856d6;
+  }
+  .st11 {
+    fill: #2b2b2b;
   }
 }

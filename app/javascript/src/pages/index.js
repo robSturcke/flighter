@@ -1,6 +1,6 @@
 import React from 'react';
 import Airlines from '../components/airlines/airlines';
-import Banner from '../images/main/banner';
+import HeroBanner from '../images/main/hero_banner';
 import LowerBanner from '../images/main/lower_banner';
 
 const Home = () => (
@@ -8,7 +8,7 @@ const Home = () => (
     <div className="container-fluid">
       <div className="airlines">
         <div className="hero_banner">
-          <Banner />
+          <HeroBanner />
         </div>
         <div className="row">
           <Airlines />

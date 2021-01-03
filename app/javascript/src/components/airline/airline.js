@@ -85,7 +85,7 @@ const Airline = (props) => {
 
   return (
     <div className="container-fluid">
-      {loaded && (
+      {loaded ? (
         <>
           <Header
             attributes={airline.data.attributes}
@@ -93,41 +93,47 @@ const Airline = (props) => {
             average={average}
           />
           <section>
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-md-12">
-                  <Accordion>
-                    <div className="my-3">
-                      <Accordion.Toggle
-                        as={Button}
-                        variant="link"
-                        eventKey="0"
-                        size="lg"
-                      >
-                        Share a Review!
-                      </Accordion.Toggle>
-                    </div>
-                    <Accordion.Collapse eventKey="0">
-                      <ReviewForm
-                        name={airline.data.attributes.name}
-                        review={review}
-                        handleChange={handleChange}
-                        handleSubmit={handleSubmit}
-                        setRating={setRating}
-                        error={error}
-                      />
-                    </Accordion.Collapse>
-                  </Accordion>
+            <div className="review_form_wrap">
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-md-12">
+                    <Accordion>
+                      <div className="my-3">
+                        <Accordion.Toggle
+                          as={Button}
+                          variant="link"
+                          eventKey="0"
+                          size="lg"
+                        >
+                          Share a Review!
+                        </Accordion.Toggle>
+                      </div>
+                      <Accordion.Collapse eventKey="0">
+                        <ReviewForm
+                          name={airline.data.attributes.name}
+                          review={review}
+                          handleChange={handleChange}
+                          handleSubmit={handleSubmit}
+                          setRating={setRating}
+                          error={error}
+                        />
+                      </Accordion.Collapse>
+                    </Accordion>
+                  </div>
                 </div>
               </div>
-              <div className="row">
-                {userReviews
-                  ? userReviews
-                  : 'No Reviews Yet! Leave a review next time you fly!'}
+              <div className="container-fluid">
+                <div className="row">
+                  {userReviews
+                    ? userReviews
+                    : 'No Reviews Yet! Leave a review next time you fly!'}
+                </div>
               </div>
             </div>
           </section>
         </>
+      ) : (
+        'Loading...'
       )}
     </div>
   );
