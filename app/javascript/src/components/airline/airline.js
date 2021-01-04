@@ -39,7 +39,7 @@ const Airline = (props) => {
 
     AxiosHelper();
 
-    const airline_id = parseInt(ariline.data.id);
+    const airline_id = parseInt(airline.data.id);
     axios
       .post('/api/v1/reviews', { ...review, airline_id })
       .then((resp) => {
@@ -99,12 +99,7 @@ const Airline = (props) => {
                   <div className="col-md-12">
                     <Accordion>
                       <div className="my-3">
-                        <Accordion.Toggle
-                          as={Button}
-                          variant="link"
-                          eventKey="0"
-                          size="lg"
-                        >
+                        <Accordion.Toggle as={Button} eventKey="0">
                           Share a Review!
                         </Accordion.Toggle>
                       </div>

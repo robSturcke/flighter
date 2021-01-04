@@ -1,34 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const Star = ({ selected = false, onClick = (f) => f }) => (
-  <div
-    className={selected ? 'review-star selected' : 'review-star'}
-    onClick={onClick}
-  />
-);
-
-const StarRating = ({ totalStars }) => {
-  const [score, selectStar] = useState(0);
-
-  return (
-    <div className="review_rating">
-      {[...Array(totalStars)].map((n, i) => (
-        <Star
-          key={i}
+const ReviewForm = (props) => {
+  const ratingOptions = [1, 2, 3, 4, 5].map((score, index) => {
+    return (
+      <div className="rating" key={index}>
+        <input
+          type="radio"
           value={score}
-          selected={i < score}
-          onClick={() => selectStar(i + 1)}
+          checked={props.review.score == score}
+          onChange={props.handleChange}
+          name="rating"
+          id={`rating-${score}`}
         />
-      ))}
-      <p className="text-muted pt-2">
-        {score} of {totalStars} stars
-      </p>
-    </div>
-  );
-};
+        <label onClick={props.setRating.bind(this, score)}></label>
+      </div>
+    );
+  });
 
-const ReviewForm = (props, { score }) => {
   return (
     <div className="review_form">
       <Form>
@@ -56,14 +45,10 @@ const ReviewForm = (props, { score }) => {
         </Form.Group>
         <Form.Group controlId="score">
           <Form.Label>Your Rating</Form.Label>
-          <StarRating
-            totalStars={5}
-            onClick={props.setRating.bind(this, score)}
-            value={score}
-          />
+          <div>{ratingOptions}</div>
         </Form.Group>
         <div className="float-right mb-5">
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={props.handleSubmit}>
             Submit Review
           </Button>
         </div>
