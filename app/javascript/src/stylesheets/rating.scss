@@ -54,43 +54,43 @@
   }
 }
 
-.review_rating {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
+// .review_rating {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+// }
 
-.review-star {
-  cursor: pointer;
-  width: 2em;
-  height: 2em;
-  background-color: $dark_flighter_grey;
-  -webkit-clip-path: polygon(
-    50% 0%,
-    63% 38%,
-    100% 38%,
-    69% 59%,
-    82% 100%,
-    50% 75%,
-    18% 100%,
-    31% 59%,
-    0% 38%,
-    37% 38%
-  );
-  clip-path: polygon(
-    50% 0%,
-    63% 38%,
-    100% 38%,
-    69% 59%,
-    82% 100%,
-    50% 75%,
-    18% 100%,
-    31% 59%,
-    0% 38%,
-    37% 38%
-  );
-}
+// .review-star {
+//   cursor: pointer;
+//   width: 2em;
+//   height: 2em;
+//   background-color: $dark_flighter_grey;
+//   -webkit-clip-path: polygon(
+//     50% 0%,
+//     63% 38%,
+//     100% 38%,
+//     69% 59%,
+//     82% 100%,
+//     50% 75%,
+//     18% 100%,
+//     31% 59%,
+//     0% 38%,
+//     37% 38%
+//   );
+//   clip-path: polygon(
+//     50% 0%,
+//     63% 38%,
+//     100% 38%,
+//     69% 59%,
+//     82% 100%,
+//     50% 75%,
+//     18% 100%,
+//     31% 59%,
+//     0% 38%,
+//     37% 38%
+//   );
+// }
 
-.review-star.selected {
-  background-color: rgb(255, 214, 10);
-}
+// .review-star.selected {
+//   background-color: rgb(255, 214, 10);
+// }
