@@ -119,16 +119,22 @@ const Airline = (props) => {
               </div>
               <div className="container-fluid">
                 <div className="row">
-                  {userReviews
-                    ? userReviews
-                    : 'No Reviews Yet! Leave a review next time you fly!'}
+                  {userReviews ? (
+                    userReviews
+                  ) : (
+                    <div className="col">
+                      <h3 className="py-3 text-center">
+                        No Reviews Yet! Leave a review next time you fly!
+                      </h3>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
           </section>
         </>
       ) : (
-        'Loading...'
+        <p className="text-center">Loading...</p>
       )}
     </div>
   );
