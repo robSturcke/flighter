@@ -40,6 +40,7 @@ const ReviewForm = (props) => {
     return (
       <Fragment key={index}>
         <input
+          required
           type="radio"
           value={score}
           checked={props.review.score == score}
@@ -58,6 +59,7 @@ const ReviewForm = (props) => {
         <Form.Group controlId="title">
           <Form.Label>Review Title</Form.Label>
           <Form.Control
+            required
             type="text"
             name="title"
             placeholder="Your review title"
@@ -68,6 +70,7 @@ const ReviewForm = (props) => {
         <Form.Group controlId="description">
           <Form.Label>Review description</Form.Label>
           <Form.Control
+            required
             type="text"
             as="textarea"
             rows="3"
