@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Accordion, Button } from 'react-bootstrap';
+import { Accordion, Button, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import Review from './review';
 import Header from './review_header';
@@ -134,7 +134,9 @@ const Airline = (props) => {
           </section>
         </>
       ) : (
-        <p className="text-center">Loading...</p>
+        <div className="text-center my-5">
+          <Spinner animation="grow" variant="primary" size="lg" />
+        </div>
       )}
     </div>
   );

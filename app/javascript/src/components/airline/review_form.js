@@ -3,6 +3,15 @@ import { Form, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import Star from '../../images/icons/star';
 import StarGrey from '../../images/icons/star_grey';
+// import Recaptcha from 'react-google-recaptcha';
+
+// const RECAPTCHA_KEY = process.env.REACT_SITE_KEY;
+
+// if (typeof RECAPTCHA_KEY === 'undefined') {
+//   throw new Error(`
+//     Env var is undefined!
+//   `);
+// }
 
 const RatingBox = styled.div`
   display: flex;
@@ -40,13 +49,13 @@ const ReviewForm = (props) => {
     return (
       <Fragment key={index}>
         <input
-          required
           type="radio"
           value={score}
           checked={props.review.score == score}
           onChange={props.handleChange}
           name="rating"
           id={`rating-${score}`}
+          required
         />
         <label onClick={props.setRating.bind(this, score)}></label>
       </Fragment>
@@ -59,18 +68,17 @@ const ReviewForm = (props) => {
         <Form.Group controlId="title">
           <Form.Label>Review Title</Form.Label>
           <Form.Control
-            required
             type="text"
             name="title"
             placeholder="Your review title"
             value={props.review.title}
             onChange={props.handleChange}
+            required
           />
         </Form.Group>
         <Form.Group controlId="description">
           <Form.Label>Review description</Form.Label>
           <Form.Control
-            required
             type="text"
             as="textarea"
             rows="3"
@@ -78,17 +86,27 @@ const ReviewForm = (props) => {
             placeholder="Your review's description"
             value={props.review.description}
             onChange={props.handleChange}
+            required
           />
         </Form.Group>
         <Form.Group controlId="score">
           <Form.Label>Your Rating</Form.Label>
           <RatingBox>{ratingOptions}</RatingBox>
         </Form.Group>
-        <div className="float-right mb-5">
-          <Button variant="primary" type="submit" onClick={props.handleSubmit}>
-            Submit Review
-          </Button>
-        </div>
+        {/* <Form.Group>
+          <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+        </Form.Group> */}
+        <Form.Group>
+          <div className="float-right mb-5">
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={props.handleSubmit}
+            >
+              Submit Review
+            </Button>
+          </div>
+        </Form.Group>
         {props.error && <p>{props.error}</p>}
       </Form>
     </div>
