@@ -37,3 +37,15 @@ reviews = Review.create([{
                            score: 1,
                            airline: airlines.first
                          }])
+
+users = User.create([{
+                      email: 'rob.sturcke@me.com',
+                      password: 'password',
+                      password_confirmation: 'password',
+                      username: 'rob'
+                    }, {
+                      email: 'test@test.com',
+                      password: 'password',
+                      password_confirmation: 'password',
+                      username: 'tester'
+                    }])
