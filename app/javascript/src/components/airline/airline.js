@@ -1,5 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Accordion, Button, Spinner } from 'react-bootstrap';
+import React, { useState, useEffect, useContext } from 'react';
+import {
+  Accordion,
+  Button,
+  Spinner,
+  useAccordionToggle,
+} from 'react-bootstrap';
 import axios from 'axios';
 import Review from './review';
 import Header from './review_header';
@@ -9,6 +14,7 @@ import AxiosHelper from '../../utils/requests/axios_helper';
 const Airline = (props) => {
   const [airline, setAirline] = useState({});
   const [reviews, setReviews] = useState([]);
+  const [isOpen, setToggle] = useState(false);
   const [review, setReview] = useState({
     title: '',
     description: '',
@@ -16,6 +22,8 @@ const Airline = (props) => {
   });
   const [error, setError] = useState('');
   const [loaded, setLoaded] = useState(false);
+
+  const handleClick = () => setToggle(!isOpen);
 
   useEffect(() => {
     const slug = props.match.params.slug;
@@ -87,50 +95,53 @@ const Airline = (props) => {
     <div className="container-fluid">
       {loaded ? (
         <>
-          <Header
-            attributes={airline.data.attributes}
-            reviews={reviews}
-            average={average}
-          />
-          <section>
-            <div className="review_form_wrap">
-              <div className="container-fluid">
-                <div className="row">
-                  <div className="col-md-12">
-                    <Accordion>
-                      <div className="my-3">
-                        <Accordion.Toggle as={Button} eventKey="0">
-                          Share a Review!
-                        </Accordion.Toggle>
-                      </div>
-                      <Accordion.Collapse eventKey="0">
-                        <ReviewForm
-                          name={airline.data.attributes.name}
-                          review={review}
-                          handleChange={handleChange}
-                          handleSubmit={handleSubmit}
-                          setRating={setRating}
-                          error={error}
-                        />
-                      </Accordion.Collapse>
-                    </Accordion>
+          <div className="review_header">
+            <div className="container-fluid">
+              <div className="row">
+                <Header
+                  attributes={airline.data.attributes}
+                  reviews={reviews}
+                  average={average}
+                />
+
+                <div className="col-md-4">
+                  <div className="my-3 float-md-right">
+                    <Button onClick={handleClick} variant="lg" color="primary">
+                      {isOpen ? 'Close Review Form' : 'Share a Review!'}
+                    </Button>
+                  </div>
+                </div>
+                <div className="col-md-12">
+                  <div
+                    className={
+                      isOpen ? 'review_form_wrap show' : 'review_form_wrap hide'
+                    }
+                  >
+                    <ReviewForm
+                      name={airline.data.attributes.name}
+                      review={review}
+                      handleChange={handleChange}
+                      handleSubmit={handleSubmit}
+                      setRating={setRating}
+                      error={error}
+                    />
                   </div>
                 </div>
               </div>
-              <div className="container-fluid">
-                <div className="row">
-                  {userReviews ? (
-                    userReviews
-                  ) : (
-                    <div className="col">
-                      <h3 className="py-3 text-center">
-                        No Reviews Yet! Leave a review next time you fly!
-                      </h3>
-                    </div>
-                  )}
+            </div>
+          </div>
+          <section>
+            {userReviews ? (
+              userReviews
+            ) : (
+              <div className="row">
+                <div className="col">
+                  <h3 className="py-3 text-center">
+                    No Reviews Yet! Leave a review next time you fly!
+                  </h3>
                 </div>
               </div>
-            </div>
+            )}
           </section>
         </>
       ) : (

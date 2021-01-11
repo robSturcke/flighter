@@ -24,5 +24,19 @@
         fill: $flighter_blk;
       }
     }
+
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          &:hover {
+            color: $flighter;
+          }
+
+          &:active {
+            color: $flighter;
+          }
+        }
+      }
+    }
   }
 }

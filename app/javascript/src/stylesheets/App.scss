@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 @import './_variables.scss';
+@import './auth.scss';
 @import './airlines.scss';
 @import './banners.scss';
 @import './navigation.scss';
@@ -22,7 +23,7 @@
 
   main {
     flex-grow: 1;
-    background-color: $white;
+    background-color: $light_grey;
   }
 
   a {

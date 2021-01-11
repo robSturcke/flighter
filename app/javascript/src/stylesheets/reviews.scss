@@ -16,6 +16,15 @@
   padding: 1rem;
   border: 1px solid $dark_flighter_grey;
   border-radius: 7px;
+  background: $white;
+}
+
+.review_form_wrap.show {
+  display: block;
+}
+
+.review_form_wrap.hide {
+  display: none;
 }
 
 .review_form_wrap {

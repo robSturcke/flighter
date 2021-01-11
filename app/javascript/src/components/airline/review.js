@@ -5,25 +5,28 @@ const Review = ({ attributes }) => {
   const { title, description, score } = attributes;
 
   return (
-    <div className="col-md-12 my-3">
-      <article>
-        <div className="review">
-          <div className="review_title">
+    <article>
+      <div className="review my-3">
+        <div className="row">
+          <div className="col-md-8">
             <header>
-              <h1>
-                {title}
-                <span className="float-right">
-                  <Rating average_score={score} />
-                </span>
-              </h1>
+              <h1>{title}</h1>
             </header>
           </div>
-          <div className="review_body">
-            <p>{description}</p>
+          <div className="col-md-4">
+            <span className="float-md-right">
+              <Rating average_score={score} />
+            </span>
           </div>
+          <div className="col-md-8">
+            <div className="review_body">
+              <p>{description}</p>
+            </div>
+          </div>
+          <div className="col-md-4"></div>
         </div>
-      </article>
-    </div>
+      </div>
+    </article>
   );
 };
 
