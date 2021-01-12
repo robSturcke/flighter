@@ -6,7 +6,7 @@ const LoginRegister = () => {
     <div className="login_bg">
       <div className="container-fluid">
         <div className="row">
-          <div className="mr-auto ml-auto mt-3 col-md-4">
+          <div className="mr-auto ml-auto mt-3 col-md-6 col-lg-4">
             <Login />
           </div>
         </div>

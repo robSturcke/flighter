@@ -99,7 +99,7 @@ const ReviewForm = (props) => {
         <Form.Group>
           <div className="float-right mb-5">
             <Button
-              variant="primary"
+              className="review_btn"
               type="submit"
               onClick={props.handleSubmit}
             >

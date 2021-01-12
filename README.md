@@ -1,24 +1,5 @@
-# README
+# Quick Answers and Preview Photos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Why didn't you include Auth Provider/Consumer on the Frontend?
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Mainly due to the use of Devise Gem, no privacy policy and not having the resources to monitor a application like this full-time.

@@ -10,6 +10,16 @@
   }
 }
 
+.review_btn {
+  background-color: $flighter;
+  color: $white;
+
+  &:hover {
+    color: $off_white;
+    background-color: darken($color: $flighter, $amount: 7%);
+  }
+}
+
 .review {
   margin: auto;
   max-width: 1440px;
@@ -32,5 +42,10 @@
   max-width: 1440px;
   .review_form {
     max-width: 600px;
+    padding-top: 1rem;
+    label {
+      font-weight: 600;
+      font-size: 110%;
+    }
   }
 }

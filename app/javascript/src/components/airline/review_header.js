@@ -12,10 +12,12 @@ const Header = ({ attributes, reviews, average, ...props }) => {
       {reviews.length == 0 ? (
         'No Customer Reveiws Yet'
       ) : (
-        <div>{reviews ? reviews.length : 0} customer reviews</div>
+        <div>
+          <strong>{reviews ? reviews.length : 0}</strong> customer reviews
+        </div>
       )}
       <div>
-        <Rating average_score={average.toFixed(1)} /> overall
+        <Rating average_score={average.toFixed(1)} /> <strong>overall</strong>
       </div>
     </div>
   );

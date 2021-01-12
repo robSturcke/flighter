@@ -1,10 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import {
-  Accordion,
-  Button,
-  Spinner,
-  useAccordionToggle,
-} from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Button, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import Review from './review';
 import Header from './review_header';
@@ -103,10 +98,13 @@ const Airline = (props) => {
                   reviews={reviews}
                   average={average}
                 />
-
                 <div className="col-md-4">
                   <div className="my-3 float-md-right">
-                    <Button onClick={handleClick} variant="lg" color="primary">
+                    <Button
+                      onClick={handleClick}
+                      variant="lg"
+                      className={isOpen ? 'review_btn disabled' : 'review_btn'}
+                    >
                       {isOpen ? 'Close Review Form' : 'Share a Review!'}
                     </Button>
                   </div>
